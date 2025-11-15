@@ -19,7 +19,7 @@
 
     outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: {
         nixosConfigurations = {
-            demeter = nixpkgs.lib.nixosSystem; {
+            demeter = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
 
                 modules = [
