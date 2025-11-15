@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-    users.users.ellie = import ./ellie.nix
+    users.users.ellie = import ./ellie.nix;
 }
