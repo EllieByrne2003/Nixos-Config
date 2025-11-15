@@ -30,7 +30,7 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
 
-                        home-manager.users.ellie = import ./home/ellie.nix
+                        home-manager.users.ellie = import ./home/ellie.nix;
                     }
                 ];
             }
