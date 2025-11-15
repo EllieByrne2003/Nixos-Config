@@ -33,7 +33,7 @@
                         home-manager.users.ellie = import ./home/ellie.nix;
                     }
                 ];
-            }
+            };
         };
     };
 }
