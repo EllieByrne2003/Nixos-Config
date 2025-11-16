@@ -1,25 +1,6 @@
 { config, pkgs, ... }:
 
 {
-	services.hyprpaper = {
-		enable = true;
-
-        # TODO put wallpapers in some common place or make this user specific
-		settings = {
-			ipc = "on";
-			spalsh = false;
-			splash_offset = 2.0;
-
-			preload = [
-				"/home/ellie/Pictures/Wallpapers/outer-wilds.png"
-			];
-
-			wallpaper = [
-				"eDP-1, /home/ellie/Pictures/Wallpapers/outer-wilds.png"
-			];
-		};
-	};
-
     services.hypridle = {
         enable = true;
 
@@ -47,30 +28,4 @@
             ];
         };
     };
-
-	programs.hyfetch = {
-		enable = true;
-
-		settings = {
-			preset = "transgender";
-			mode = "rgb";
-			light_dark = "dark";
-			lightness = 0.65;
-
-			color_align = {
-				mode = "custom";
-				custom_colors = [
-					1
-					0
-				];
-				fore_back = null;
-			};
-
-			backend = "neofetch";
-			args = null;
-			distro = null;
-			pride_month_shown = [];
-			pride_month_disable = false;
-		};
-	};
 }
