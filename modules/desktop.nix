@@ -5,7 +5,7 @@
         ./hyprland.nix
 
         ./firefox.nix
-        ./bash.nix
+        #./bash.nix
         ./vscodium.nix
     ];
 }
