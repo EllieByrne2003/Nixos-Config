@@ -42,7 +42,7 @@
 		};
 		Service = {
 			Type = "Simple";
-			ExecStart = ""${pkgs.hyprland};
+			ExecStart = "${pkgs.hyprland}/bin/hyprland";
 		};
 		Install = {
 			WantedBy = [ "graphical-session.target" ];
