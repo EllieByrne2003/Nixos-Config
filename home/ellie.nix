@@ -115,6 +115,20 @@
 		};
 	};
 
+    # This is Ellie's git
+	programs.git = {
+		enable = true;
+
+		extraConfig = {
+		 	user = {
+		 		name = "EllieByrne2003";
+		 		email = "leonbyrne52@gmail.com";
+		 	};
+
+		 	pull.rebase = false;
+		};
+	};
+
 	programs.hyfetch = {
 		enable = true;
 
