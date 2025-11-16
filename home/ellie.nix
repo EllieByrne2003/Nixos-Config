@@ -141,8 +141,8 @@
 		};
 	};
 
-    # Set hyprland as default
-    services.xserver.displayManager.defaultSession = "hyprland";
+    # # Set hyprland as default
+    # services.xserver.displayManager.defaultSession = "hyprland";
 
 
     home.stateVersion = "25.05";
