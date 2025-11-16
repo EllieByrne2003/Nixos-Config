@@ -4,8 +4,8 @@
     imports = [
         ./hyprland.nix
 
-        ./firefox
-        ./bash
-        ./vscodium
+        ./firefox.nix
+        ./bash.nix
+        ./vscodium.nix
     ];
 }
