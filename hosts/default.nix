@@ -4,7 +4,7 @@
     imports = [
         ../users/default.nix
 
-        ../modules/hyprland.nix
+        ../modules/desktop.nix
     ];
 
     # Needed for all hosts
