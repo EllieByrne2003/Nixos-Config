@@ -5,7 +5,7 @@
         ../users/default.nix
 
         ../modules/hyprland.nix
-        ../modules/hyfetch.nix
+        # ../modules/hyfetch.nix
     ];
 
     # Needed for all hosts
@@ -67,6 +67,32 @@
 		pciutils   # lspci
 		usbutils   # lsusb
     ];
+
+	programs.hyfetch = {
+		enable = true;
+
+		settings = {
+			preset = "transgender";
+			mode = "rgb";
+			light_dark = "dark";
+			lightness = 0.65;
+
+			color_align = {
+				mode = "custom";
+				custom_colors = [
+					1
+					0
+				];
+				fore_back = null;
+			};
+
+			backend = "neofetch";
+			args = null;
+			distro = null;
+			pride_month_shown = [];
+			pride_month_disable = false;
+		};
+	};
 
     # TODO Could be moved elsewhere, only for some steam games, ellie specific?
     nixpkgs.config.allowUnfree = true;
