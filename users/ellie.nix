@@ -25,8 +25,7 @@
 		 		email = "leonbyrne52@gmail.com";
 		 	};
 
-				
 		 	pull.rebase = false;
-		 };
+		};
 	};
 }
