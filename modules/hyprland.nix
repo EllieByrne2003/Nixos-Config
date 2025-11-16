@@ -19,14 +19,14 @@
 		superfile       # termainal based file explorer
     ];
 
-    programs.hyprland = {
-        enable = true;
+    # programs.hyprland = {
+    #     enable = true;
 
-        # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    };
+    #     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # };
 
-    programs.hyprlock.enable = true;
-    security.pam.services.hyprlock = {};
+    # programs.hyprlock.enable = true;
+    # security.pam.services.hyprlock = {};
 
     # security.wrappers.hyrplock = {
     #     source = "${pkgs.hyprlock}/bin/hyprlock";

@@ -34,4 +34,18 @@
             ];
         };
     };
+
+	systemd.user.services.hypr-service = {
+		Unit = {
+			Description = "Starts hyprland on startup";
+			After = [ "graphical-session.target" ];
+		};
+		Service = {
+			Type = "Simple";
+			ExecStart = ""${pkgs.hyprland};
+		};
+		Install = {
+			WantedBy = [ "graphical-session.target" ];
+		}
+	};
 }
