@@ -13,5 +13,5 @@
     ];
 
     home = "/home/ellie";
-    shell = pkgs.bash;
+    # shell = pkgs.bash;
 }
