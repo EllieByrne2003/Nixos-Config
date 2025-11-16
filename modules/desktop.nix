@@ -9,13 +9,13 @@
         #./vscodium.nix
     ];
 
-    services.xserver = {
-        enable = true;
-        displayManager.sddm = {
-            enable = true;
-            wayland.enable = true;
-        };
-    };
+    # services.xserver = {
+    #     enable = true;
+    #     displayManager.sddm = {
+    #         enable = true;
+    #         wayland.enable = true;
+    #     };
+    # };
 
     programs.hyprland = {
         enable = true;
