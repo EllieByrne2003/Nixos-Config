@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+    imports = [
+        ../modules/bash.nix
+        ../modules/firefox.nix
+        ../modules/vscodium.nix
+    ];
+
     services.hypridle = {
         enable = true;
 
