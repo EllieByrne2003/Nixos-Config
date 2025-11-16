@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+    # home.systemPackages = with pkgs; [
+    #     hyfetch
+    # ];
+
 	programs.hyfetch = {
 		enable = true;
 
