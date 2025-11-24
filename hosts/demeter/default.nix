@@ -69,7 +69,7 @@
         jetbrains-mono
      	];
        
-			fontConfig = {
+			fontconfig = {
 				enable = true;
 				defaultFonts = {
 					monospace = [
