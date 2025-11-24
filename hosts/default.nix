@@ -68,6 +68,11 @@
 		usbutils   # lsusb
     ];
 
+	programs.java = {
+		enable = true;
+		package = pkgs.jdk;
+	};
+
     # TODO Could be moved elsewhere, only for some steam games, ellie specific?
     nixpkgs.config.allowUnfree = true;
 
