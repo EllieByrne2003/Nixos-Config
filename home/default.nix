@@ -7,6 +7,18 @@
         ../modules/vscodium.nix
     ];
 
+    home.packages = with pkgs; [
+        waybar
+
+        kitty
+        walker
+        seahorse
+        hyprshot
+        wl-clip-persist
+        gedit
+        superfile
+    ];
+
     services.hypridle = {
         enable = true;
 
