@@ -61,7 +61,7 @@
 
     # TODO could be moved in waybar or something, it is needed for just that I think
     fonts = {
-    	enableDefualtFonts = true;
+    	enableDefaultFonts = true;
     
     	packages = with pkgs; [
       	font-awesome
