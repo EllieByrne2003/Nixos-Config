@@ -60,9 +60,28 @@
     ];
 
     # TODO could be moved in waybar or something, it is needed for just that I think
-    fonts.packages = with pkgs; [
-        font-awesome
-    ];
+    fonts = {
+    	enableDefualtFonts = true;
+    
+    	packages = with pkgs; [
+      	font-awesome
+        	
+        jetbrains-mono
+     	];
+       
+			fontConfig = {
+				enable = true;
+				defaultFonts = {
+					monospace = [
+						"JetBrains Mono"	
+					];		
+     		};
+      }; 
+    };
+    
+    environment.variables = {
+    	TERMINAL_FONT = "JetBrains Mono";
+    };
 
     programs.steam = {
         enable = true;
