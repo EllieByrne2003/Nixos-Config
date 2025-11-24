@@ -10,14 +10,14 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        hyprland = {
-            url = "github:hyprwm/Hyprland";
+        # hyprland = {
+        #     url = "github:hyprwm/Hyprland";
 
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        #     inputs.nixpkgs.follows = "nixpkgs";
+        # };
     };
 
-    outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: {
+    outputs = { self, nixpkgs, home-manager, ...}@inputs: {
         nixosConfigurations = {
             demeter = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -37,3 +37,6 @@
         };
     };
 }
+
+# nix flake update
+# nixos-rebuild switch --flake /etc/nixos#demeter
