@@ -10,7 +10,6 @@
 
     # Stuff unique to ellie    
     packages = with pkgs; [
-        android-studio
     ];
 
     home = "/home/ellie";

@@ -57,6 +57,8 @@
         # steam needs to be here to set hardware stuff
         steam 
         steam-run
+
+        android-studio
     ];
 
     # TODO could be moved in waybar or something, it is needed for just that I think
