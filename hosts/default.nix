@@ -7,14 +7,39 @@
         ../modules/desktop.nix
     ];
 
-    # Needed for all hosts
-    nix.settings.experimental-features = [
-        "nix-command"
-        "flakes"
-    ];
+    # Nix settings for all hosts
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nix.gc.automatic       = true;
+	nix.optimise.automatic = true;
+
+	# Bootloader
+	boot.loader.systemd-boot.enable      = true;
+	boot.loader.efi.canTouchEfiVariables = true;
+
+	# Networking
+	networking.hostname = "nixos"; # Can be overriden
+	networking.networkmanager.enable = true;
+
+	# Localisation stuff
+    console.keyMap = "ie";
+    time.timeZone = "Europe/Dublin";
+    i18n.defaultLocale = "en_IE.UTF-8";
+    i18n.extraLocaleSettings = {
+        LC_ADDRESS = "en_IE.UTF-8";
+        LC_IDENTIFICATION = "en_IE.UTF-8";
+        LC_MEASUREMENT = "en_IE.UTF-8";
+        LC_MONETARY = "en_IE.UTF-8";
+        LC_NAME = "en_IE.UTF-8";
+        LC_NUMERIC = "en_IE.UTF-8";
+        LC_PAPER = "en_IE.UTF-8";
+        LC_TELEPHONE = "en_IE.UTF-8";
+        LC_TIME = "en_IE.UTF-8";
+    };
+
 
     # Packages needed on any host
     environment.systemPackages = with pkgs; [
+		# Downloading stuff
         wget
         git
 
@@ -68,10 +93,10 @@
 		usbutils   # lsusb
     ];
 
-	programs.java = {
-		enable = true;
-		package = pkgs.jdk;
-	};
+	# programs.java = {
+	# 	enable = true;
+	# 	package = pkgs.jdk;
+	# };
 
     # TODO Could be moved elsewhere, only for some steam games, ellie specific?
     nixpkgs.config.allowUnfree = true;

@@ -11,7 +11,19 @@
     ];
 
     home.packages = with pkgs; [
+		# programs
         discord
+
+		# text editor
+        gedit
+
+		# tools for programming needed for all projects
+        git
+        gcc
+        gdb
+        gnumake
+		clang
+        clang-tools
     ];
 
     wayland.windowManager.hyprland = {

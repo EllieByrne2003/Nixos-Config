@@ -6,6 +6,8 @@
     extraGroups = [
         "networkmanager"
         "wheel"
+        "video"
+        "audio"
     ];
 
     # Stuff unique to ellie    

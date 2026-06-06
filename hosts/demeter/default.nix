@@ -2,45 +2,37 @@
 
 {
     imports = [
-        ../default.nix
-
-        ./hardware-configuration.nix
+        ../default.nix               # Common to all hosts
+        ./hardware-configuration.nix # Demeter specific hardware
     ];
 
-    # Bootloader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    # Hostname
+    networking.hostName = "demeter";
 
-    # Use latest kernel.
-    boot.kernelPackages = pkgs.linuxPackages_latest;
-
-    networking.hostName = "demeter"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-    # Enable networking
-    networking.networkmanager.enable = true;
-
-    # Set your time zone.
-    time.timeZone = "Europe/Dublin";
-
-    # Select internationalisation properties.
-    i18n.defaultLocale = "en_IE.UTF-8";
-
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "en_IE.UTF-8";
-        LC_IDENTIFICATION = "en_IE.UTF-8";
-        LC_MEASUREMENT = "en_IE.UTF-8";
-        LC_MONETARY = "en_IE.UTF-8";
-        LC_NAME = "en_IE.UTF-8";
-        LC_NUMERIC = "en_IE.UTF-8";
-        LC_PAPER = "en_IE.UTF-8";
-        LC_TELEPHONE = "en_IE.UTF-8";
-        LC_TIME = "en_IE.UTF-8";
+    # Enable hyprland (for all users) # TODO maybe for all hosts?
+    programs.hyprland = {
+        enable = true;
+        package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
+
+    xdg.portal = {
+        enable = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    };
+
+
+    security.rtkit.enable = true;
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        pulse.enable = true;
+    };
+
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -48,8 +40,16 @@
         variant = "";
     };
 
-    # Configure console keymap
-    console.keyMap = "ie";
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+    };
+
+    programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+    };
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -58,7 +58,7 @@
         steam 
         steam-run
 
-        android-studio
+        # android-studio
     ];
 
     # TODO could be moved in waybar or something, it is needed for just that I think
@@ -83,23 +83,5 @@
     
     environment.variables = {
     	TERMINAL_FONT = "JetBrains Mono";
-    };
-
-    programs.steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-    };
-
-    hardware.graphics = {
-        enable = true;
-        enable32Bit = true;
-    };
-
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
     };
 }
